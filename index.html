@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Now</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">☀</span>
+                <span>Weather Now</span>
+            </div>
+
+            <div class="menu-box">
+                <button id="unitsButton" class="button dark-button">
+                    ⚙ Units ▼
+                </button>
+
+                <div id="unitsMenu" class="dropdown hidden"></div>
+            </div>
+        </header>
+
+
+        <!-- Error message -->
+        <section id="errorBox" class="error-box hidden">
+            <div class="error-icon">⚠</div>
+            <h2>Something went wrong</h2>
+            <p>
+                We could not connect to the weather server.
+                Please try again in a few moments.
+            </p>
+
+            <button id="retryButton" class="button dark-button">
+                ↻ Retry
+            </button>
+        </section>
+
+
+        <!-- Main application -->
+        <main id="app">
+
+            <h1>How's the sky looking today?</h1>
+
+            <!-- Search -->
+            <form id="searchForm" class="search-form">
+                <div class="search-box">
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Search for a place..."
+                        autocomplete="off"
+                    >
+
+                    <div id="suggestions" class="suggestions hidden"></div>
+                </div>
+
+                <button class="button search-button" type="submit">
+                    Search
+                </button>
+            </form>
+
+            <p id="emptyMessage" class="empty-message hidden">
+                No search result found!
+            </p>
+
+
+            <!-- Weather content -->
+            <div id="weatherContent" class="weather-grid">
+
+                <div>
+                    <!-- Current weather -->
+                    <div id="currentWeather" class="current-weather"></div>
+
+                    <!-- Weather details -->
+                    <div id="weatherStats" class="stats"></div>
+
+                    <h3>Daily forecast</h3>
+
+                    <div id="dailyForecast" class="days"></div>
+                </div>
+
+
+                <!-- Hourly weather -->
+                <div class="hourly-panel">
+
+                    <div class="hourly-header">
+                        <h3>Hourly forecast</h3>
+
+                        <div class="menu-box">
+                            <button id="dayButton" class="button day-button">
+                                <span id="dayLabel">-</span> ▼
+                            </button>
+
+                            <div id="dayMenu" class="dropdown hidden"></div>
+                        </div>
+                    </div>
+
+                    <div id="hourlyForecast" class="hours"></div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
